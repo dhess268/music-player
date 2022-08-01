@@ -31,3 +31,5 @@ var setCurrentAlbum = function(album) {
     $albumSongList.append($songRow);
   }
 };
+
+setCurrentAlbum(albums[0])
