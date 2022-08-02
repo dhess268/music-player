@@ -119,7 +119,7 @@ var setSong = function(songNumber){
   currentSoundFile.bind("timeupdate", function () {
     var percent = this.getPercent();
     var timer = buzz.toTimer(currentSoundFile.getTime())
-    console.log(percent)
+    // console.log(percent)
     $('.currently-playing .fill').css('width', ''+ percent + '%');
     $('.currently-playing .thumb').css('left', ''+ percent + '%');
     $('.current-time').html(timer)
@@ -173,17 +173,17 @@ $('.previous').click(function(){
 
 $('.currently-playing .seek-bar').click(function(e) {
   if(currentSoundFile){
-    console.log($(this).offset()['left'], "div offset from left")
-    console.log($(this).width(), "div width")
-    console.log(e.pageX, "mouse X position")
+    // console.log($(this).offset()['left'], "div offset from left")
+    // console.log($(this).width(), "div width")
+    // console.log(e.pageX, "mouse X position")
     var numerator = e.pageX - $(this).offset()['left']
-    console.log(numerator, "numerator")
+    // console.log(numerator, "numerator")
     var denominator = $(this).width()
-    console.log(denominator, "denominator")
+    // console.log(denominator, "denominator")
     var fractionAcrossTimeSeek = numerator / denominator
-    console.log(fractionAcrossTimeSeek)
+    // console.log(fractionAcrossTimeSeek)
     var percentAcrossTimeSeek = fractionAcrossTimeSeek * 100
-    console.log(percentAcrossTimeSeek, "%")
+    // console.log(percentAcrossTimeSeek, "%")
     currentSoundFile.setPercent(percentAcrossTimeSeek)
   }
 
@@ -191,17 +191,17 @@ $('.currently-playing .seek-bar').click(function(e) {
 
 $('.volume .seek-bar').click(function(e){
   
-  console.log($(this).offset()['left'], "div offset from left")
-  console.log($(this).width(), "div width")
-  console.log(e.pageX, "mouse X position")
+  // console.log($(this).offset()['left'], "div offset from left")
+  // console.log($(this).width(), "div width")
+  // console.log(e.pageX, "mouse X position")
   var numerator = e.pageX - $(this).offset()['left']
-  console.log(numerator, "numerator")
+  // console.log(numerator, "numerator")
   var denominator = $(this).width()
-  console.log(denominator, "denominator")
+  // console.log(denominator, "denominator")
   var fractionAcrossVolumeSeek = numerator / denominator
-  console.log(fractionAcrossVolumeSeek)
+  // console.log(fractionAcrossVolumeSeek)
   var percentAcrossVolumeSeek = fractionAcrossVolumeSeek * 100
-  console.log(percentAcrossVolumeSeek, "%")
+  // console.log(percentAcrossVolumeSeek, "%")
   if(percentAcrossVolumeSeek < 0){
     userVolume = 0;
 
